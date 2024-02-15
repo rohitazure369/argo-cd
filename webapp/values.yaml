@@ -18,5 +18,5 @@ service:
 
 secretname: websitesecret
 ingress:
-  host: dlgkedemo.com
+  host: example.com
   path: /
