@@ -2,26 +2,20 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: webapp1
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: in-cluster
-    namespace: webapps
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
   source:
-    path: webapp/helm-charts
-    repoURL: 'https://github.com/rohit369/argo-cd'
+    path: webapp
+    repoURL: 'https://github.com/rohitazure369/argo-cd.git'
     targetRevision: HEAD
     helm:
       valueFiles:
         - values.yaml
-  sources: []
   project: default
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: false
-    syncOptions:
-      - CreateNamespace=true
-      - ServerSideApply=true
+      prune: true
+      selfHeal: true
