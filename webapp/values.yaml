@@ -1,5 +1,5 @@
 appname: webapp1
-replicaCount: 5
+replicaCount: 2
 image:
   artficate_repo: nginx
   repository: webapp1
