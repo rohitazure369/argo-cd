@@ -2,7 +2,7 @@
 
     helm repo add argo https://argoproj.github.io/argo-helm
 
-    helm install argo-cd argo/argo-cd --namespace argo --create-namespace
+    helm install argo-cd argo/argo-cd --namespace argocd --create-namespace
 
     kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 PASSword: XX6UaGUGSDz65yke
