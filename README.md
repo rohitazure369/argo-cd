@@ -9,7 +9,7 @@ PASSword: XX6UaGUGSDz65yke
 
 # update argo cd service to convert as LoadBalancer type to get public IP
 ## not recommeded to production
-    kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+    kubectl patch svc argo-cd-argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 
 
 # get the Argo CD default admin password 
